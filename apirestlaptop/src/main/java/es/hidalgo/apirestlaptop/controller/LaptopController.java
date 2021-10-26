@@ -4,6 +4,7 @@ import es.hidalgo.apirestlaptop.entitites.Laptop;
 import es.hidalgo.apirestlaptop.repository.LaptopRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ import java.util.Optional;
 
 @RestController
 public class LaptopController {
+
+    @Value("${app.message}")
+    String message;
 
     private final Logger log = LoggerFactory.getLogger(LaptopController.class);
     private LaptopRepository laptopRepository;
@@ -26,6 +30,7 @@ public class LaptopController {
      */
     @GetMapping("/api/laptops")
     public List<Laptop> findAll(){
+        System.out.println(message);
         return laptopRepository.findAll();
     }
 

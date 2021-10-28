@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: es.hidalgo.apirestlaptop.ApirestlaptopApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.795 s - in es.hidalgo.apirestlaptop.ApirestlaptopApplicationTests

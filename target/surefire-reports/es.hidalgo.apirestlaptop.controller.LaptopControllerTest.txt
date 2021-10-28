@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: es.hidalgo.apirestlaptop.controller.LaptopControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.557 s - in es.hidalgo.apirestlaptop.controller.LaptopControllerTest

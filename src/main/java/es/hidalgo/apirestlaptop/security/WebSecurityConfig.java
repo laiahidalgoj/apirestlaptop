@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/hola/laptop").permitAll()
+                .antMatchers("/hola/laptop").hasRole("USER")
                 .antMatchers("/api/laptops").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -39,9 +39,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.inMemoryAuthentication()
                     .passwordEncoder(passwordEncoder())
-                    .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
+                    .withUser("admin").password(passwordEncoder().encode("password-admin")).roles("ADMIN")
                     .and()
-                    .withUser("admin").password(passwordEncoder().encode("password")).roles("ADMIN");
+                    .withUser("user").password(passwordEncoder().encode("password-user")).roles("USER");
         }
 
         @Bean
